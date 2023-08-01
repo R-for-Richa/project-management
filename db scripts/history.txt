@@ -1,0 +1,23 @@
+
+CREATE TABLE `History` (
+  `History_id` int NOT NULL AUTO_INCREMENT,
+  `Ivykio_tipas` text COLLATE utf32_lithuanian_ci NOT NULL,
+  `Ivykio_vardas` varchar(255) NOT NULL,
+  `Pakeitimo_data` datetime NOT NULL,
+  `Vartotojo_id` int(11) NOT NULL,
+  `Vardas` varchar(255) NOT NULL,
+   PRIMARY KEY (`History_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_lithuanian_ci;
+
+arba 
+
+CREATE TABLE `History` (
+  `History_id` int NOT NULL AUTO_INCREMENT,
+  `Ivykio_tipas` text COLLATE utf32_lithuanian_ci NOT NULL,
+  `Ivykio_vardas` varchar(255) NOT NULL,
+  `Pakeitimo_data` datetime NOT NULL,
+  `Vartotojo_id` int(11) NOT NULL,
+  `Vardas` varchar(255) NOT NULL,
+   PRIMARY KEY (`History_id`),
+   FOREIGN KEY (`Vartotojo_id`) REFERENCES vartotojai (`Vartotojo_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_lithuanian_ci;
